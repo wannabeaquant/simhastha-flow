@@ -109,6 +109,7 @@ export const SimulationConsole: React.FC = () => {
   };
 
   const currentScenario = scenarios.find(s => s.id === activeScenario);
+  const ScenarioIcon = currentScenario?.icon;
 
   return (
     <Card className="dashboard-card">
@@ -193,7 +194,9 @@ export const SimulationConsole: React.FC = () => {
             {/* Scenario Header */}
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <currentScenario.icon className={cn("h-6 w-6", currentScenario.color)} />
+                {ScenarioIcon && (
+                  <ScenarioIcon className={cn("h-6 w-6", currentScenario.color)} />
+                )}
               </div>
               <div className="flex-1">
                 <h4 className="font-semibold text-foreground">{currentScenario.name}</h4>
