@@ -22,10 +22,13 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          light: "hsl(var(--secondary-light))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -48,14 +51,33 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
+          DEFAULT: "hsl(var(--sidebar))",
           foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+          active: "hsl(var(--sidebar-active))",
+          muted: "hsl(var(--sidebar-muted))",
+        },
+        // Status colors
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        // Alert system colors
+        alert: {
+          critical: "hsl(var(--alert-critical))",
+          high: "hsl(var(--alert-high))",
+          medium: "hsl(var(--alert-medium))",
+          low: "hsl(var(--alert-low))",
+        },
+        // Route colors
+        route: {
+          pilgrim: "hsl(var(--route-pilgrim))",
+          vip: "hsl(var(--route-vip))",
+          emergency: "hsl(var(--route-emergency))",
+          accessible: "hsl(var(--route-accessible))",
         },
       },
       borderRadius: {
@@ -80,10 +102,60 @@ export default {
             height: "0",
           },
         },
+        // Dashboard specific animations
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "slide-in": {
+          "0%": {
+            transform: "translateX(-100%)"
+          },
+          "100%": {
+            transform: "translateX(0)"
+          }
+        },
+        "pulse-slow": {
+          "0%, 100%": {
+            opacity: "1"
+          },
+          "50%": {
+            opacity: "0.5"
+          }
+        },
+        "bounce-gentle": {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-4px)"
+          }
+        },
+        "scale-in": {
+          "0%": {
+            transform: "scale(0.95)",
+            opacity: "0"
+          },
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
+        "slide-in": "slide-in 0.3s ease-out",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
+        "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
+        "scale-in": "scale-in 0.2s ease-out",
       },
     },
   },
